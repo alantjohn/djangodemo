@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-sm-4 me-5">
+      <img src="{{ p.image.url }}" class="card-img-top" height="200px" width="150%">
+    </div>
+    <div class="col-sm-6 me-5">
+       <h4>{{ p.name }}</h4>
+         <p class="h4 mt-5 lh-base" >{{ p.desc }}</p>
+        <h4 class="mt-4" >Rs. {{ p.price }}</h4>
+      <a href="{% url 'cart:addtocart' p.name %}" class="btn btn-danger mt-5">ADD TO CART</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
